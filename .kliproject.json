@@ -1,0 +1,106 @@
+{
+  "templates": [
+    {
+      "rootDir": "template",
+      "delete": true,
+      "files": [
+        {
+          "source": "template/template.service.ts",
+          "destination": "src/{{.Inputs.module}}/{{.Inputs.module}}.service.ts"
+        },
+        {
+          "source": "template/template.module.ts",
+          "destination": "src/{{.Inputs.module}}/{{.Inputs.module}}.module.ts"
+        },
+        {
+          "source": "template/template.dto.ts",
+          "destination": "src/{{.Inputs.module}}/{{.Inputs.module}}.dto.ts"
+        },
+        {
+          "source": "template/app.module.ts",
+          "destination": "src/app.module.ts"
+        },
+        {
+          "source": "template/entrypoint.ts",
+          "destination": "src/entrypoint.ts"
+        }
+      ]
+    },
+    {
+      "rootDir": "aws",
+      "delete": false,
+      "files": [
+        {
+          "source": "aws/lambda/terragrunt.hcl",
+          "destination": "aws/lambda/terragrunt.hcl"
+        }
+      ]
+    },
+    {
+      "rootDir": "cdklocal",
+      "delete": false,
+      "files": [
+        {
+          "source": "cdklocal/lib/app-stack.ts",
+          "destination": "cdklocal/lib/app-stack.ts"
+        }
+      ]
+    },
+    {
+      "rootDir": "./",
+      "delete": false,
+      "files": [
+        {
+          "source": "package.json",
+          "destination": "package.json"
+        },
+        {
+          "source": "serverless.hcl",
+          "destination": "serverless.hcl"
+        }
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "name": "module",
+      "description": "Project module",
+      "type": "string"
+    },
+    {
+      "name": "description",
+      "description": "Project description",
+      "type": "string"
+    },
+    {
+      "name": "service_name",
+      "description": "Service name",
+      "type": "string"
+    },
+    {
+      "name": "parameter_path",
+      "description": "Parameter path",
+      "type": "string"
+    },
+    {
+      "name": "queue_name",
+      "description": "Queue name",
+      "type": "string"
+    },
+    {
+      "name": "queue_arn_path",
+      "description": "Queue arn path (without /company/app/stage/infra/)",
+      "type": "string"
+    }
+  ],
+  "posthooks": [
+    {
+      "name": "Install cdklocal dependencies",
+      "command": "cd cdklocal && npm install"
+    },
+    {
+      "name": "Install npm dependencies",
+      "command": "npm install"
+    }
+  ]
+}
