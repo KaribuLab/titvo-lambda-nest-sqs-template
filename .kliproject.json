@@ -55,8 +55,20 @@
           "destination": "package.json"
         },
         {
+          "source": "terragrunt.hcl",
+          "destination": "terragrunt.hcl"
+        },
+        {
           "source": "serverless.hcl",
           "destination": "serverless.hcl"
+        },
+        {
+          "source": "turbowatch.ts",
+          "destination": "turbowatch.ts"
+        },
+        {
+          "source": "vitest.config.ts",
+          "destination": "vitest.config.ts"
         }
       ]
     }
