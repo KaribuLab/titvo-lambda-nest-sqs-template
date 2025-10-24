@@ -107,10 +107,6 @@
   ],
   "posthooks": [
     {
-      "name": "Install cdklocal dependencies",
-      "command": "cd cdklocal && npm install"
-    },
-    {
       "name": "Install npm dependencies",
       "command": "npm install"
     }
