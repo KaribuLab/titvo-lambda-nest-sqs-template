@@ -82,6 +82,7 @@ async function getParameters(ssmClient: SSMClient, nextToken?: string): Promise<
     synthesizer: new cdk.LegacyStackSynthesizer(),
     eventBusName: params[`${basePath}/eventbridge/eventbus_name`],
     parameterTableName: params[`${basePath}/dynamodb/parameter/dynamodb_table_name`],
+    aesKeyPath: params['/tvo/security-scan/localstack/aes_secret'],
 
     /* For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html */
   });
