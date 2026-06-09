@@ -1,5 +1,5 @@
 terraform {
-  source = "git::https://github.com/KaribuLab/terraform-aws-parameter-lookup.git?ref=v0.1.0"
+  source = "git::https://github.com/KaribuLab/terraform-aws-parameter-lookup.git?ref=v0.7.8"
 }
 
 locals {
